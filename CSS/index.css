@@ -1,0 +1,215 @@
+/* css/testmain.css */
+
+/* ====================================================== */
+/* Basic Reset & Global Styles (Keep As Is)             */
+/* ====================================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: #007bff; }
+a:hover { text-decoration: underline; }
+/* ====================================================== */
+/* Header Styles (Keep As Is)                           */
+/* ====================================================== */
+.main-header { background-color: #fff; padding: 10px 0; border-bottom: 1px solid #eee; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); position: sticky; top: 0; z-index: 1000; }
+.header-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8em; font-weight: bold; color: #d90000; text-decoration: none; }
+.main-nav { margin-left: 30px; margin-right: auto; }
+.main-nav ul { list-style: none; display: flex; align-items: center; padding-left: 0; }
+.main-nav li { margin-right: 20px; }
+.main-nav a { text-decoration: none; color: #555; padding: 5px 0px; font-size: 0.95em; transition: color 0.3s ease; display: inline-flex; align-items: center; gap: 5px; }
+.main-nav a:hover { color: #000; text-decoration: none; }
+.header-actions { display: flex; align-items: center; gap: 15px; }
+.refer-earn { text-decoration: none; color: #555; font-size: 0.9em; }
+.refer-earn:hover { text-decoration: underline; }
+.notification-icon { font-size: 1.2em; color: #777; cursor: pointer; }
+.user-profile { display: flex; align-items: center; gap: 8px; }
+.profile-icon { width: 35px; height: 35px; background-color: #d90000; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.1em; cursor: pointer; }
+#username-display { font-weight: 500; color: #333; }
+.login-link { padding: 6px 15px; border: 1px solid #007bff; background-color: #e7f1ff; color: #0056b3; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: 500; text-decoration: none; transition: background-color 0.2s, color 0.2s; }
+.login-link:hover { background-color: #cfe2ff; color: #003f80; text-decoration: none; }
+.logout-button { padding: 6px 15px; border: 1px solid #f5c6cb; background-color: #f8d7da; color: #721c24; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: 500; transition: background-color 0.2s; margin-left: 5px; }
+.logout-button:hover { background-color: #f1b0b7; }
+
+/* ====================================================== */
+/* Main Content Area (Keep As Is)                       */
+/* ====================================================== */
+.main-content { padding: 30px 0; }
+.promo-banner { background-color: #fff0dd; border-radius: 15px; padding: 50px 40px; text-align: center; position: relative; color: #333; min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 40px; }
+.banner-content h1 { font-size: 3em; color: #333; font-weight: bold; margin-bottom: 10px; }
+.banner-content h2 { font-size: 1.5em; margin-bottom: 0; font-weight: normal; color: #444; }
+.banner-content h2 strong { font-weight: bold; }
+.banner-logo { position: absolute; top: 20px; right: 30px; font-size: 1.3em; font-weight: bold; color: #d90000; }
+
+/* ====================================================== */
+/* Exam Selection Tabs Styling (Keep As Is)             */
+/* ====================================================== */
+.Exams-cards { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 15px; margin-bottom: 40px; border-bottom: 1px solid #dee2e6; padding-bottom: 15px; }
+.subject-card-button { border-radius: 8px; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; display: inline-flex; align-items: center; padding: 12px 20px; border: 2px solid transparent; flex-grow: 0; flex-shrink: 0; background-color: #f8f9fa; min-height: 50px; justify-content: center; text-align: center; }
+.subject-card-button .card-icon { font-size: 1.2em; margin-right: 8px; color: #6c757d; line-height: 1; width: 1.2em; text-align: center; }
+.subject-card-button span { font-size: 0.9em; font-weight: 500; color: #495057; line-height: 1.2; }
+.JEEMAIN-card { background-color: #e7f5ff; } .JEEMAIN-card .card-icon { color: #4dabf7; } .JEEMAIN-card span { color: #1c7ed6; }
+.JEEADVANCE-card { background-color: #fff0f6; } .JEEADVANCE-card .card-icon { color: #f783ac; } .JEEADVANCE-card span { color: #d6336c; }
+.WBJEE-card { background-color: #f3f0ff; } .WBJEE-card .card-icon { color: #9775fa; } .WBJEE-card span { color: #7048e8; }
+.COMEDK-card { background-color: #f4fce3; } .COMEDK-card .card-icon { color: #94d82d; } .COMEDK-card span { color: #66a80f; }
+.NEET-card { background-color: #e6fffa; } .NEET-card .card-icon { color: #38d9a9; } .NEET-card span { color: #087f5b; }
+.CLASS12-card { background-color: #fff9db; } .CLASS12-card .card-icon { color: #ffc078; } .CLASS12-card span { color: #f59f00; }
+.subject-card-button:not(.active):hover { background-color: #e9ecef; }
+.subject-card-button.active { transform: none; }
+.JEEMAIN-card.active { border-color: #4dabf7; box-shadow: 0 2px 5px rgba(77, 171, 247, 0.2); }
+.JEEADVANCE-card.active { border-color: #f783ac; box-shadow: 0 2px 5px rgba(247, 131, 172, 0.2); }
+.WBJEE-card.active { border-color: #9775fa; box-shadow: 0 2px 5px rgba(151, 117, 250, 0.2); }
+.COMEDK-card.active { border-color: #94d82d; box-shadow: 0 2px 5px rgba(148, 216, 45, 0.2); }
+.NEET-card.active { border-color: #38d9a9; box-shadow: 0 2px 5px rgba(56, 217, 169, 0.2); }
+.CLASS12-card.active { border-color: #ffc078; box-shadow: 0 2px 5px rgba(255, 192, 120, 0.2); }
+
+/* ====================================================== */
+/* Papers Display Area & Common List Styling            */
+/* ====================================================== */
+.Papers-display-area { margin-top: 30px; }
+.paper-list { display: none; background-color: #fff; padding: 30px 35px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); margin-bottom: 30px; animation: fadeIn 0.4s ease-out; }
+.paper-list.active-list { display: block; }
+.paper-list h3 { font-size: 1.5em; color: #343a40; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 3px solid #dee2e6; display: inline-block; }
+/* Dynamic Heading Borders */
+.paper-list.JEEMAIN-list-active h3 { border-bottom-color: #4dabf7; }
+.paper-list.JEEADVANCE-list-active h3 { border-bottom-color: #f783ac; }
+.paper-list.WBJEE-list-active h3 { border-bottom-color: #9775fa; }
+.paper-list.COMEDK-list-active h3 { border-bottom-color: #94d82d; }
+.paper-list.NEET-list-active h3 { border-bottom-color: #38d9a9; }
+.paper-list.CLASS12-list-active h3 { border-bottom-color: #ffc078; }
+
+/* ====================================================== */
+/* Styling for CARD Layout (JEE, NEET etc.)             */
+/* ====================================================== */
+.paper-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.paper-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+.paper-card h4 { font-size: 1.1em; font-weight: 600; color: #333; margin-bottom: 8px; }
+.paper-details { font-size: 0.85em; color: #666; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 5px; }
+.tag { background-color: #e0f2f7; color: #007bff; padding: 3px 8px; border-radius: 4px; font-size: 0.8em; font-weight: 500; white-space: nowrap; }
+.paper-actions { margin-top: auto; display: flex; gap: 10px; }
+
+/* Base Button Style (Shared across card/list actions) */
+.btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease, border-color 0.2s ease, color 0.2s ease;
+    flex-grow: 1;
+    border: 1px solid transparent;
+}
+.btn:active { transform: scale(0.98); }
+
+/* Outlined Button Style (Used in Cards) */
+.btn-outline { background-color: #fff; border-color: #ced4da; color: #495057; }
+.btn-outline:hover { background-color: #f8f9fa; }
+.btn-take-test { border-color: #007bff; color: #007bff; }
+.btn-take-test:hover { background-color: #e7f1ff; }
+.btn-previous-result { border-color: #dc3545; color: #dc3545; }
+.btn-previous-result:hover { background-color: #f8d7da; }
+
+/* ====================================================== */
+/* Styling for LIST Layout (Class 12 ONLY)              */
+/* ====================================================== */
+
+/* Styles for the UL within paper-list (needed for Class 12) */
+#CLASS12-papers .paper-list ul { /* Target only within Class 12 if needed, otherwise general */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    /* Optional: Add columns if list is very long */
+    /* column-count: 2; */
+    /* column-gap: 30px; */
+}
+
+/* Style for the Subject/Year SPAN (needed for Class 12) */
+#CLASS12-papers .paper-list ul > span { /* Target only within Class 12 if needed */
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+/* Style for the paper links (needed for Class 12) */
+.paper-link { /* General style, will apply to Class 12 */
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #343a40;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    margin-left: 15px; /* Indent paper links */
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    border: 1px solid #e9ecef;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+.paper-link:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* --- REMOVE Class 12 specific button styles if not needed --- */
+/* These were for the button layout in Class 12, remove if using list layout */
+/*
+#CLASS12-papers .paper-list-actions { ... }
+#CLASS12-papers .btn-start-test { ... }
+#CLASS12-papers .btn-view-results { ... }
+*/
+
+
+/* ====================================================== */
+/* Responsive Adjustments (Keep As Is or Modify)        */
+/* ====================================================== */
+@media (max-width: 992px) {
+     .paper-card-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; align-items: flex-start; padding-bottom: 10px; }
+    .main-nav { margin-left: 0; margin-top: 10px; width: 100%; }
+    .main-nav ul { flex-direction: column; align-items: flex-start; }
+    .main-nav li { margin-right: 0; margin-bottom: 5px; width: 100%; }
+    .header-actions { margin-left: 0; margin-top: 10px; }
+    .Exams-cards { justify-content: center; }
+    .promo-banner { padding: 40px 20px; }
+    .banner-content h1 { font-size: 2.5em; }
+    .banner-content h2 { font-size: 1.3em; }
+    /* Class 12 list columns */
+    #CLASS12-papers .paper-list ul { column-count: 1; }
+}
+@media (max-width: 576px) {
+     .subject-card-button { padding: 10px 15px; width: calc(50% - 10px); justify-content: flex-start; font-size: 0.85em; }
+     .subject-card-button .card-icon { font-size: 1.1em; }
+     .banner-content h1 { font-size: 2em; }
+     .banner-content h2 { font-size: 1.1em; }
+     .paper-list { padding: 20px; }
+     .paper-list h3 { font-size: 1.3em; }
+     .paper-card-grid { grid-template-columns: 1fr; }
+     .paper-actions { flex-direction: column; }
+     .btn { width: 100%; }
+     /* Ensure Class 12 links look okay */
+     .paper-link { margin-left: 0; } /* Remove indent on small screens */
+}
+
+/* ====================================================== */
+/* Animations (Keep As Is)                              */
+/* ====================================================== */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }

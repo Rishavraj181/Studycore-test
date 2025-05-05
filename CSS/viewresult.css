@@ -1,0 +1,638 @@
+/* --- General Styles --- */
+:root {
+    --primary-color: #3b82f6; /* Blue */
+    --success-color: #10b981; /* Green */
+    --danger-color: #ef4444; /* Red */
+    --warning-color: #f59e0b; /* Amber */
+    --gray-light: #f3f4f6;
+    --gray-medium: #d1d5db;
+    --gray-dark: #4b5563;
+    --text-color: #1f2937;
+    --bg-color: #ffffff;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--gray-light);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left .logo {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.header-center {
+    text-align: center;
+}
+
+.header-center h1 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.header-center p {
+    margin: 2px 0 0 0;
+    font-size: 0.8em;
+    opacity: 0.9;
+}
+
+.header-right .overall-score-display {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.header-right .overall-score-display span {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+
+/* --- Main Layout --- */
+.main-container {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* --- Attempts Sidebar --- */
+.attempts-list-section {
+    flex: 0 0 250px; /* Fixed width sidebar */
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    height: fit-content; /* Adjust height */
+}
+
+.attempts-list-section h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+.attempts-list-section p small {
+    font-size: 0.8em;
+    color: var(--gray-dark);
+    margin-bottom: 15px;
+    display: block;
+}
+
+#attempts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    max-height: 400px; /* Limit height */
+    overflow-y: auto; /* Add scroll if needed */
+}
+
+#attempts-list li {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#attempts-list li span {
+    font-weight: 500;
+    font-size: 0.9em;
+    color: var(--gray-dark);
+}
+
+
+#attempts-list li:hover {
+    background-color: var(--gray-light);
+    border-color: var(--primary-color);
+}
+
+#attempts-list li.selected-attempt {
+    background-color: #dbeafe; /* Light blue */
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+#attempts-list li.no-attempts {
+    cursor: default;
+    font-style: italic;
+    color: var(--gray-dark);
+    border: none;
+    padding-left: 0;
+}
+
+.attempts-list-section .back-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.attempts-list-section .back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Results Display Area --- */
+.results-display-area {
+    flex-grow: 1;
+    /* background-color: var(--bg-color); */
+    /* padding: 20px; */
+    /* border-radius: var(--border-radius); */
+    /* box-shadow: var(--card-shadow); */
+    display: flex; /* Use flex for managing children */
+    flex-direction: column; /* Stack children vertically */
+}
+
+.message-center {
+    flex-grow: 1; /* Take remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    color: var(--gray-dark);
+    font-size: 1.1em;
+}
+
+/* --- Dashboard View --- */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between sections */
+}
+
+/* Grid Container for responsive cards */
+.grid-container {
+    display: grid;
+    gap: 20px;
+}
+
+/* Card Base Style */
+.card {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+.card h3, .card h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 1.15em;
+}
+
+/* Results Overview (Top Row) */
+.results-overview {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    align-items: stretch; /* Make cards same height */
+}
+
+.results-overview .chart-card {
+    grid-column: span 2; /* Make chart wider on larger screens */
+    display: flex;
+    flex-direction: column;
+}
+.results-overview .chart-card h3 {
+    margin-bottom: 10px;
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 250px; /* Limit chart size */
+    margin: 0 auto 15px auto; /* Center chart */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+}
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    margin-top: auto; /* Push legend to bottom */
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.legend-color-box {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.results-overview .metric-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+.metric-card .metric-value {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    line-height: 1.1;
+}
+.metric-card .metric-label {
+    font-size: 0.9em;
+    color: var(--gray-dark);
+    margin: 0;
+}
+#metric-accuracy { color: var(--success-color); }
+#metric-negative { color: var(--danger-color); }
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0; /* Removed bottom margin as sections have gaps */
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 500;
+}
+.action-btn i { margin-right: 8px; }
+
+.action-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.action-btn.primary:hover {
+    background-color: #2563eb; /* Darker blue */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.action-btn.secondary {
+    background-color: var(--gray-medium);
+    color: var(--text-color);
+}
+.action-btn.secondary:hover {
+    background-color: #9ca3af; /* Darker gray */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Time Management */
+.time-management-summary .time-split {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+.time-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.time-item i {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+.time-item .time-label {
+    font-size: 0.9em;
+    color: var(--gray-dark);
+    margin-bottom: 4px;
+}
+.time-item .time-value {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.time-item.correct-time i { color: var(--success-color); }
+.time-item.wrong-time i { color: var(--danger-color); }
+.time-item.not-attempted-time i { color: var(--warning-color); }
+
+/* Sections Overview Table */
+.sections-overview .table-container {
+    overflow-x: auto; /* Allow horizontal scroll on small screens */
+}
+#sections-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+#sections-table th, #sections-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-medium);
+}
+#sections-table th {
+    background-color: var(--gray-light);
+    font-weight: 600;
+    color: var(--gray-dark);
+}
+#sections-table tbody tr:last-child td {
+    border-bottom: none;
+}
+#sections-table tbody tr:hover {
+    background-color: #eef2ff; /* Light indigo */
+}
+#sections-table td:nth-child(2), /* Score */
+#sections-table td:nth-child(3), /* Accuracy */
+#sections-table td:nth-child(4), /* Attempted */
+#sections-table td:nth-child(5) { /* Time */
+    text-align: center;
+    min-width: 80px; /* Prevent excessive squishing */
+}
+#sections-table .accuracy-good { color: var(--success-color); }
+#sections-table .accuracy-medium { color: #d97706; } /* Amber */
+#sections-table .accuracy-bad { color: var(--danger-color); }
+
+/* --- Detailed Results Area (Styling loaded from viewresult_detailed.css) --- */
+/* Add specific overrides or styles if needed */
+#detailed-results-area {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-top: 0; /* Reset margin if any */
+}
+#detailed-results-area h2 {
+    color: var(--primary-color);
+    margin-top: 10px; /* Adjust spacing */
+}
+
+#back-to-dashboard-btn {
+    margin-right: 10px;
+}
+
+#print-results-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background-color: var(--success-color);
+    color: white;
+    transition: background-color 0.2s ease;
+    float: right; /* Position print button */
+}
+#print-results-button i { margin-right: 5px; }
+#print-results-button:hover {
+    background-color: #059669; /* Darker green */
+}
+/* --- Additions/Modifications to style.css --- */
+
+/* ... (keep existing styles) ... */
+
+
+/* --- Detailed Section Analysis --- */
+.detailed-section-analysis {
+    margin-top: 25px; /* Add space above this section */
+}
+
+.detailed-section-analysis .section-title {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block; /* Make border only as wide as text */
+}
+
+
+/* Style the grid container for section cards */
+.detailed-section-analysis .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adjust minmax for desired card width */
+    gap: 20px;
+}
+
+.detailed-section-analysis .grid-container > p { /* Style the loading message */
+    grid-column: 1 / -1; /* Span full width */
+    text-align: center;
+    color: var(--gray-dark);
+    padding: 20px;
+}
+
+
+/* Individual Section Card Styling */
+.section-detail-card {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden; /* Ensure header background doesn't leak */
+    display: flex;
+    flex-direction: column;
+}
+
+.section-card-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.section-card-body {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for stats */
+    gap: 10px 15px; /* Row gap, Column gap */
+    margin-bottom: 15px;
+}
+
+.stat-item .stat-label {
+    font-size: 0.85em;
+    color: var(--gray-dark);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.stat-item .stat-value {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* Advanced Analysis Section */
+.advanced-analysis-links {
+    padding: 0 15px 15px 15px; /* Padding inside the card */
+}
+.advanced-analysis-links h5 {
+    font-size: 0.95em;
+    color: var(--gray-dark);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.analysis-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for links */
+    gap: 10px;
+}
+
+.analysis-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-medium);
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none; /* If using <a> tags */
+}
+.analysis-link:hover {
+    background-color: var(--gray-light);
+    border-color: var(--primary-color);
+}
+.analysis-link i { /* Style the arrow */
+    color: var(--success-color);
+    font-size: 1.1em;
+}
+
+
+/* Section Card Footer Buttons */
+.section-card-footer {
+    margin-top: auto; /* Push footer to bottom */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0; /* Remove gap if buttons touch */
+    padding: 0;
+}
+
+.section-card-footer button {
+    padding: 12px 10px;
+    border: none;
+    border-top: 1px solid var(--gray-medium); /* Separator line */
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+/* Specific button styling */
+.btn-question-map {
+    background-color: #f3e8ff; /* Light purple */
+    color: #6b21a8; /* Dark purple */
+    border-right: 1px solid var(--gray-medium); /* Separator line */
+    border-radius: 0 0 0 var(--border-radius); /* Bottom-left radius */
+}
+.btn-question-map:hover {
+    background-color: #e9d5ff; /* Darker light purple */
+}
+
+.btn-view-section-questions {
+    background-color: #dcfce7; /* Light green */
+    color: #166534; /* Dark green */
+     border-radius: 0 0 var(--border-radius) 0; /* Bottom-right radius */
+}
+.btn-view-section-questions:hover {
+    background-color: #bbf7d0; /* Darker light green */
+}
+
+/* --- Responsive Adjustments (Add or Modify) --- */
+@media (max-width: 768px) {
+    .detailed-section-analysis .grid-container {
+         grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+    .section-card-body {
+        grid-template-columns: 1fr; /* Stack stats */
+        gap: 8px;
+    }
+     .analysis-options {
+        grid-template-columns: 1fr; /* Stack analysis links */
+    }
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .attempts-list-section {
+        flex: 0 0 auto; /* Allow sidebar to shrink */
+        width: 100%;
+        margin-bottom: 20px; /* Add space below sidebar */
+    }
+    .results-overview .chart-card {
+        grid-column: span 1; /* Stack chart card */
+    }
+    .results-overview {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column size */
+    }
+    .metric-card .metric-value {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 10px 15px;
+        flex-wrap: wrap; /* Allow header items to wrap */
+        justify-content: center; /* Center items when wrapped */
+        gap: 5px;
+    }
+     .header-center { order: -1; width: 100%; margin-bottom: 5px;} /* Move title up */
+     .header-center h1 {font-size: 1em;}
+     .header-center p { font-size: 0.75em;}
+     .header-right .overall-score-display {font-size: 1em;}
+
+    .main-container {
+        padding: 10px;
+        gap: 10px;
+    }
+    .card { padding: 15px; }
+    .grid-container { gap: 10px; }
+    .action-buttons { flex-direction: column; } /* Stack buttons */
+    .action-btn { width: 100%; }
+    .time-management-summary .time-split {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .time-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    .time-item i { font-size: 1.5em; margin-bottom: 0;}
+
+    #sections-table th, #sections-table td {
+        padding: 8px 10px;
+        font-size: 0.9em;
+    }
+    
+}
+
+/* --- Print Styles (Loaded from viewresult_print.css) --- */
+/* Ensure relevant print styles are in viewresult_print.css */

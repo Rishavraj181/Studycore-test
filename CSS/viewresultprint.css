@@ -1,0 +1,237 @@
+/* --- viewresult_print.css --- */
+@media print {
+    body {
+        font-family: sans-serif; /* Or your preferred print font */
+        font-size: 10pt;
+        color: #000;
+        background-color: #fff !important;
+        /* Crucial for printing colors */
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    /* --- Hide Common Non-Print Elements (Apply Always) --- */
+    .main-header,
+    .attempts-list-section,
+    #select-attempt-message,
+    .action-buttons, /* Hide the whole action button container */
+    #view-all-questions-btn, /* Hide specific buttons just in case */
+    #back-to-dashboard-btn,
+    #print-results-button,
+    #print-dashboard-btn,
+    .review-section-tabs,
+    .results-summary, /* Generic summary sections */
+    .section-card-footer, /* Buttons on detailed section cards */
+    .advanced-analysis-links, /* Analysis links */
+    .footer /* Hide any footer */
+    {
+        display: none !important;
+    }
+
+    /* --- Layout Adjustments (Apply Always) --- */
+    .main-container {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .results-display-area {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 5mm !important; /* Print margins */
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+    }
+
+    /* ====================================================== */
+    /* === Case 1: Printing DETAILED view (Default) === */
+    /* === Styles apply when body does NOT have .printing-dashboard === */
+    /* ====================================================== */
+
+    body:not(.printing-dashboard) #dashboard-view {
+        display: none !important; /* Hide dashboard */
+    }
+    body:not(.printing-dashboard) #detailed-results-area {
+        display: block !important; /* Show detailed view */
+        width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* --- Detailed View Specific Print Styles --- */
+    body:not(.printing-dashboard) #detailed-results-area h2 { /* Detailed view title */
+        margin-top: 15px; margin-bottom: 10px; font-size: 14pt; font-weight: bold;
+        border-bottom: 1px solid #999; padding-bottom: 5px; page-break-after: avoid;
+    }
+    body:not(.printing-dashboard) #detailed-results-area h2 span#attempt-timestamp {
+        font-size: 10pt; font-weight: normal; margin-left: 10px; color: #333;
+    }
+    body:not(.printing-dashboard) .review-questions-container {
+        padding: 0 !important; margin: 0 !important; border: none !important;
+        max-height: none !important; overflow: visible !important;
+    }
+    body:not(.printing-dashboard) .print-section-header { /* JS Added Section Header */
+        font-size: 13pt; font-weight: bold; color: #000; margin-top: 20px;
+        padding-top: 10px; border-top: 1px solid #666; page-break-after: avoid;
+        /* page-break-before: always; */ /* Optional: uncomment for page break before sections */
+    }
+    body:not(.printing-dashboard) #review-questions-container > h4:first-of-type {
+        page-break-before: auto !important; border-top: none !important;
+        margin-top: 0 !important; padding-top: 0 !important;
+    }
+    body:not(.printing-dashboard) .review-question-item { /* Individual Question Styling */
+        border: 1px solid #bbb; padding: 10px; margin-bottom: 12px;
+        page-break-inside: avoid; background-color: #fff !important; box-shadow: none !important;
+    }
+    body:not(.printing-dashboard) .question-number { font-size: 11pt; font-weight: bold; color: #000; margin-bottom: 5px; }
+    body:not(.printing-dashboard) .question-text { font-size: 10pt; line-height: 1.4; margin-bottom: 10px; color: #000; }
+    body:not(.printing-dashboard) .question-text p,
+    body:not(.printing-dashboard) .question-text span { color: #000 !important; background-color: transparent !important; }
+    body:not(.printing-dashboard) .question-text mjx-container,
+    body:not(.printing-dashboard) .review-solution div mjx-container { font-size: 10pt !important; color: #000 !important; }
+    body:not(.printing-dashboard) .review-options { margin-top: 8px; }
+    body:not(.printing-dashboard) .review-options div { margin-bottom: 4px; padding: 4px 6px; font-size: 10pt; border: 1px solid #eee; background-color: #fff !important; color: #000; }
+    body:not(.printing-dashboard) .review-details { border-top: 1px dashed #ccc; margin-top: 10px; padding-top: 8px; font-size: 9pt; color: #333; }
+    body:not(.printing-dashboard) .review-details > div { margin-bottom: 3px; }
+    body:not(.printing-dashboard) .review-details span { font-weight: bold; padding: 1px 3px; border-radius: 3px; }
+    body:not(.printing-dashboard) .review-status.correct { color: #ffffff !important; background-color: #10b981 !important; }
+    body:not(.printing-dashboard) .review-status.incorrect { color: #ffffff !important; background-color: #ef4444 !important; }
+    body:not(.printing-dashboard) .review-status.unattempted { color: #000000 !important; background-color: #f59e0b !important; }
+    body:not(.printing-dashboard) .user-answer { color: #000 !important; background-color: #e9ecef !important; }
+    body:not(.printing-dashboard) .user-answer.incorrect-ans { color: #ffffff !important; background-color: #ef4444 !important; text-decoration: none; }
+    body:not(.printing-dashboard) .review-details > div:has(span.correct-answer) span.correct-answer,
+    body:not(.printing-dashboard) span.correct-answer { /* Simpler fallback */ color: #ffffff !important; background-color: #10b981 !important; }
+    body:not(.printing-dashboard) .review-solution { margin-top: 10px; padding: 10px; border: 1px solid #ddd; border-left: 3px solid #6c757d; background-color: #f8f9fa !important; font-size: 10pt; color: #000; }
+    body:not(.printing-dashboard) .review-solution strong { font-weight: bold; color: #000; display: block; margin-bottom: 5px; }
+    body:not(.printing-dashboard) .review-solution div { line-height: 1.4; }
+    body:not(.printing-dashboard) .review-solution p,
+    body:not(.printing-dashboard) .review-solution span { color: #000 !important; background-color: transparent !important; }
+
+
+    /* ====================================================== */
+    /* === Case 2: Printing DASHBOARD view === */
+    /* === Styles apply when body HAS .printing-dashboard === */
+    /* ====================================================== */
+
+    body.printing-dashboard #detailed-results-area {
+        display: none !important; /* Hide detailed view */
+    }
+    body.printing-dashboard #dashboard-view {
+        display: block !important; /* Show dashboard */
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* --- Dashboard Specific Print Styles --- */
+    body.printing-dashboard .dashboard-content {
+        padding: 0 !important;
+    }
+    body.printing-dashboard .metrics-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns for print */
+        gap: 15px; /* Slightly more gap */
+        page-break-inside: avoid;
+        margin-bottom: 20px; /* Space below metrics */
+    }
+    body.printing-dashboard .card { /* General card style for dashboard print */
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 10px !important;
+        page-break-inside: avoid;
+        background-color: #fff !important;
+    }
+     /* Style specific cards */
+    body.printing-dashboard .score-card {
+        grid-column: span 2; /* Make score card span both columns */
+        display: flex; /* Use flex for better centering */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Center content vertically */
+        min-height: 200px; /* Give it some minimum height */
+    }
+     body.printing-dashboard .score-card h3 { /* Score Breakdown Title */
+        font-size: 12pt;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+    }
+     body.printing-dashboard .score-card .chart-container {
+          width: 160px; /* Fixed size for chart */
+          height: 160px;
+          margin: 0 auto 10px auto; /* Center chart */
+     }
+     body.printing-dashboard #scorePieChart { max-width: 100%; max-height: 100%; }
+     body.printing-dashboard .chart-legend { display: flex; flex-wrap: wrap; justify-content: center; font-size: 9pt; margin-top: 10px; }
+     body.printing-dashboard .legend-item { margin: 2px 8px; display: inline-flex; align-items: center; }
+     body.printing-dashboard .legend-color-box { width: 12px; height: 12px; margin-right: 5px; display: inline-block; border: 1px solid #ccc;}
+
+    body.printing-dashboard .metric-card {
+         display: flex;
+         flex-direction: column;
+         justify-content: center; /* Center content vertically */
+         align-items: center; /* Center content horizontally */
+         text-align: center;
+         min-height: 100px; /* Give metric cards some height */
+    }
+    body.printing-dashboard .metric-card .metric-label { font-size: 10pt !important; color: #007bff !important; /* Use a theme color */ font-weight: bold; margin-bottom: 5px;}
+    body.printing-dashboard .metric-card .metric-value { font-size: 16pt !important; font-weight: bold; color: #000 !important; margin-bottom: 3px; }
+    body.printing-dashboard .metric-card .metric-sublabel { font-size: 8pt !important; color: #555 !important; }
+
+     /* Sections Overview Table Styling */
+     body.printing-dashboard #sections-overview-table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px;
+         font-size: 9pt;
+         page-break-inside: avoid; /* Try keep table together */
+     }
+     body.printing-dashboard #sections-overview-table th,
+     body.printing-dashboard #sections-overview-table td {
+         border: 1px solid #bbb; /* Slightly darker border */
+         padding: 5px 7px;
+         text-align: center; /* Center align table data */
+     }
+      body.printing-dashboard #sections-overview-table th {
+          background-color: #e9ecef !important; /* Light gray header */
+          font-weight: bold;
+          color: #000;
+      }
+      body.printing-dashboard #sections-overview-table td span[class*="accuracy-"] {
+          font-weight: bold; /* Make accuracy stand out */
+          padding: 2px 4px;
+          border-radius: 3px;
+          color: #fff !important; /* White text on colored background */
+      }
+      /* Apply background colors for accuracy like web view */
+      body.printing-dashboard #sections-overview-table td span.accuracy-good { background-color: #10b981 !important; }
+      body.printing-dashboard #sections-overview-table td span.accuracy-medium { background-color: #ffc107 !important; color: #000 !important; /* Black text on yellow */ }
+      body.printing-dashboard #sections-overview-table td span.accuracy-bad { background-color: #ef4444 !important; }
+
+
+     /* Hide elements NOT wanted in dashboard print */
+     body.printing-dashboard #detailed-section-cards-container { display: none !important; }
+     body.printing-dashboard #time-mgmt-card { display: none !important; }
+
+
+    /* ====================================================== */
+    /* === Common Print Styles (Apply Always) === */
+    /* ====================================================== */
+    table { page-break-inside: auto; }
+    tr { page-break-inside: avoid; page-break-after: auto; }
+    thead { display: table-header-group; } /* Repeat table headers */
+    tfoot { display: table-footer-group; }
+
+    h2, h3, h4, h5, h6, p, ul, ol, .card, table { page-break-inside: avoid; }
+    h2, h3, h4, h5, h6 { page-break-after: avoid; }
+    a { color: #000 !important; text-decoration: none !important; }
+    ::-webkit-scrollbar { display: none; }
+    * { box-shadow: none !important; text-shadow: none !important; } /* Remove shadows for print */
+
+} /* End of @media print */

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyCore - Test Series</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="CSS/index.css"> <!-- Correct Path -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container header-container">
+        <a href="../index.html" class="logo">StudyCore</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">JEE</a></li>
+                <li><a href="#">NEET</a></li>
+                <li><a href="#">Class 12 Boards</a></li>
+            </ul>
+        </nav>
+         <div class="header-actions">
+            <a href="#" class="refer-earn">Refer</a>
+            <i class="fas fa-bell notification-icon"></i>
+            <!-- Login/Profile Placeholder -->
+            <a href="#" id="login-link" class="login-link" style="display: inline-block;">Login</a>
+            <div id="user-profile-section" class="user-profile" style="display: none;">
+                 <div class="profile-icon" id="user-profile-icon">U</div>
+                 <span id="username-display">USER</span>
+                 <button id="logout-button" class="logout-button" style="display: none;">Logout</button>
+             </div>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <section class="promo-banner">
+            <div class="banner-content">
+                <h1>WELCOME</h1>
+                <h2>To <strong>TEST</strong>attempting</h2>
+                <div class="banner-logo">StudyCore</div>
+            </div>
+        </section>
+
+        <!-- Exams Tabs Section -->
+        <section class="Exams-cards">
+            <div class="subject-card-button JEEMAIN-card" data-subject="JEE MAIN"> <div class="card-icon"><i class="fas fa-atom"></i></div> <span>JEE MAIN</span> </div>
+            <div class="subject-card-button JEEADVANCE-card" data-subject="JEE ADVANCE"> <div class="card-icon"><i class="fas fa-flask"></i></div> <span>JEE ADVANCE</span> </div>
+            <div class="subject-card-button WBJEE-card" data-subject="WBJEE"> <div class="card-icon"><i class="fas fa-calculator"></i></div> <span>WBJEE</span> </div>
+            <div class="subject-card-button COMEDK-card" data-subject="COMEDK"> <div class="card-icon"><i class="fas fa-star"></i></div> <span>COMEDK</span> </div>
+            <div class="subject-card-button NEET-card" data-subject="NEET"> <div class="card-icon"><i class="fas fa-stethoscope"></i></div> <span>NEET</span> </div>
+            <div class="subject-card-button CLASS12-card" data-subject="CLASS12"> <div class="card-icon"><i class="fas fa-book-open"></i></div> <span>Class 12</span> </div>
+        </section>
+
+        <!-- Paper Lists Section -->
+        <section class="Papers-display-area">
+
+            <!-- ================== JEE MAIN Content (Card Layout) ================== -->
+            <div id="JEEMAIN-papers" class="paper-list">
+                <h3>JEE MAIN PYP - 2025</h3> <!-- Updated Heading -->
+                <div class="paper-card-grid"> <!-- Grid container -->
+
+                    <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 8th April Evening Shift</h4>
+                        <p class="paper-details">8 April 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <a href ="Test JM/Attempt/jm-8april-2025-attempt.html" class="btn btn-outline btn-take-test">Take Test</a>
+                            <a href ="Test JM/result/JM8aprilS2result.html" class="btn btn-outline btn-previous-result">Previous Result</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                     <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 7th April Evening Shift</h4>
+                        <p class="paper-details">7 April 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+
+                     <!-- Card 3 -->
+                     <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 7th April Morning Shift</h4>
+                        <p class="paper-details">7 April 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+
+                     <!-- Card 4 -->
+                     <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 4th April Evening Shift</h4>
+                        <p class="paper-details">4 April 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+
+                     <!-- Card 5 -->
+                     <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 4th April Morning Shift</h4>
+                        <p class="paper-details">4 April 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+
+                     <!-- Card 6 -->
+                     <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 3rd April Evening Shift</h4>
+                        <p class="paper-details">3 April 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 3rd April Morning Shift</h4>
+                        <p class="paper-details">3 April 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 2nd April Evening Shift</h4>
+                        <p class="paper-details">2 April 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 2nd April Morning Shift</h4>
+                        <p class="paper-details">2 April 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 29 January Evening Shift</h4>
+                        <p class="paper-details">29 January 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 11 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 29 January Morning Shift</h4>
+                        <p class="paper-details">3 April 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 12 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 28 January Evening Shift</h4>
+                        <p class="paper-details">28 January 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 13 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 28 January Morning Shift</h4>
+                        <p class="paper-details">28 January 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 14 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 24 January Evening Shift</h4>
+                        <p class="paper-details">24 January 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 15 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 24 January Morning Shift</h4>
+                        <p class="paper-details">24 January 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 16 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 23 Janury Evening Shift</h4>
+                        <p class="paper-details">23 January 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 17 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 23rd Jnaury Morning Shift</h4>
+                        <p class="paper-details">23 January 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 18 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 22 January Evening Shift</h4>
+                        <p class="paper-details">22 January 2025 at 03:00 pm <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Card 19 -->
+                    <div class="paper-card">
+                        <h4>JEE Main 2025 (Online) 22 January Morning Shift</h4>
+                        <p class="paper-details">22 Jnaury 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    </div> <!-- End paper-card-grid -->
+                <h3>JM PYP 2024</h3>
+                <div class="paper-card-grid"> 
+                    <div class="paper-card">
+                        <h4>JEE Main 2024 (Online) 3rd April Evening Shift</h4>
+                        <p class="paper-details">22 Jnaury 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <div class="paper-card">
+                        <h4>JEE Main 2024 (Online) 3rd April Evening Shift</h4>
+                        <p class="paper-details">22 Jnaury 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <div class="paper-card">
+                        <h4>JEE Main 2024 (Online) 3rd April Evening Shift</h4>
+                        <p class="paper-details">22 Jnaury 2025 at 09:00 am <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!-- Add more cards as needed for other shifts -->
+                </div> <!--end of paper card 2024-->  
+                <!-- Add more cards as needed for other years --> 
+            </div>
+
+            <!-- ================== JEE ADVANCE Content (Card Layout) ================== -->
+            <div id="JEEADVANCE-papers" class="paper-list">
+                <h3>JEE ADVANCE PYP - 2025</h3>
+                <div class="paper-card-grid">
+                     <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>JEE Advance 2025 Paper 1</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                     <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>JEE Advance 2025 Paper 2</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                </div>
+                <h3>JEE ADVANCE PYP - 2024</h3>
+                <div class="paper-card-grid">
+                     <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>JEE Advance 2024 Paper 1</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                     <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>JEE Advance 2024 Paper 2</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                     <!-- Add more cards for other years -->
+                </div>
+                <h3>JEE ADVANCE PYP - 2023</h3>
+                 <div class="paper-card-grid">
+                     <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>JEE Advance 2023 Paper 1</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                     <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>JEE Advance 2023 Paper 2</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                 </div>
+                 <!-- Add more cards for other years -->
+            </div>
+
+            <!-- ================== WBJEE Content (Card Layout) ================== -->
+            <div id="WBJEE-papers" class="paper-list">
+                 <h3>WBJEE PYP - 2025</h3>
+                 <div class="paper-card-grid">
+                      <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>WBJEE 2025 Paper 1 - Math</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                      <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>WBJEE 2025 Paper 2 - Physics & Chemistry</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                      <!-- Add more cards for other years -->
+                 </div>
+                 <h3>WBJEE PYP - 2024</h3>
+                 <div class="paper-card-grid">
+                      <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>WBJEE 2024 Paper 1 - Math</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                      <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>WBJEE 2024 Paper 2 - Physics & Chemistry</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                      <!-- Add more cards for other years -->
+                 </div>
+                 <h3>WBJEE PYP - 2023</h3>
+                 <div class="paper-card-grid">
+                      <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>WBJEE 2023 Paper 1 - Math</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                      <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>WBJEE 2023 Paper 2 - Physics & Chemistry</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                      <!-- Add more cards for other years -->
+                 </div>
+            </div>
+
+            <!-- ================== COMEDK Content (Card Layout) ================== -->
+            <div id="COMEDK-papers" class="paper-list">
+                <h3>COMEDK PYP - 2025</h3>
+                  <div class="paper-card-grid">
+                      <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>COMEDK 2025 Morning Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                       <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>COMEDK 2025 Afternoon Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!--Card 3-->
+                    <div class="paper-card">
+                        <h4>COMEDK 2025 Evening Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <h3>COMEDK PYP - 2024</h3>
+                  <div class="paper-card-grid">
+                      <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>COMEDK 2024 Morning Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                       <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>COMEDK 2024 Afternoon Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!--Card 3-->
+                    <div class="paper-card">
+                        <h4>COMEDK 2024 Evening Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                 </div>
+
+                 <h3>COMEDK PYP - 2023</h3>
+                  <div class="paper-card-grid">
+                      <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>COMEDK 2023 Morning Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                       <!-- Card 2 -->
+                    <div class="paper-card">
+                        <h4>COMEDK 2023 Afternoon Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                    <!--Card 3-->
+                    <div class="paper-card">
+                        <h4>COMEDK 2023 Evening Shift</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                 </div>
+                 <!--Add for other Years-->
+            </div>
+
+            <!-- ================== NEET Content (Card Layout) ================== -->
+            <div id="NEET-papers" class="paper-list">
+                <h3>NEET PYP - 2025</h3>
+                  <div class="paper-card-grid">
+                       <!-- Card 1 -->
+                    <div class="paper-card">
+                        <h4>NEET 2025</h4>
+                        <p class="paper-details">Date TBD <span class="tag">English</span></p>
+                        <div class="paper-actions">
+                            <button class="btn btn-outline btn-take-test">Take Test</button>
+                            <button class="btn btn-outline btn-previous-result">Previous Result</button>
+                        </div>
+                    </div>
+                       <!-- Add more cards for other years -->
+                 </div>
+            </div>
+
+            <!-- ================== Class 12 Content (Button Layout) ================== -->
+            <div id="CLASS12-papers" class="paper-list">
+                <h3>Class 12 PYP / Chapters</h3>
+                  <ul>
+                    <span>2025</span>
+                    <a href="#" class="paper-link">Physics</a>
+                    <a href="#" class="paper-link">Chemistry</a>
+                    <a href="#" class="paper-link">Math</a>
+                    <a href="#" class="paper-link">English</a>
+                    <a href="#" class="paper-link">Biology</a>
+                  </ul>
+                  <ul>
+                    <span>2024</span>
+                    <a href="#" class="paper-link">Physics</a>
+                    <a href="#" class="paper-link">Chemistry</a>
+                    <a href="#" class="paper-link">Math</a>
+                    <a href="#" class="paper-link">English</a>
+                    <a href="#" class="paper-link">Biology</a>
+                  </ul>
+                   <!-- Add more years/subjects -->
+            </div>
+        </section> <!-- End Papers-display-area -->
+
+    </div> <!-- End container -->
+</main>
+
+<!-- Link JavaScript files -->
+<script src="JS/index.js"></script> <!-- Correct Path -->
+<!-- <script src="js/auth.js"></script> -->
+
+</body>
+</html>
