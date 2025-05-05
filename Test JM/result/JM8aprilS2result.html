@@ -96,7 +96,7 @@
                 <!-- Action Buttons Row -->
                 <section class="action-buttons">
                     <button id="print-dashboard-btn" class="btn btn-secondary action-button"><i class="fas fa-print"></i> Print Dashboard</button>
-                    <button id="view-all-questions-btn" class="action-btn primary"><i class="fas fa-list-ul"></i> View All Questions</button>
+                    <button id="view-all-questions-btn" class="action-btn primary"><i class="fas fa-list-ul"></i> View In Detail</button>
                     <!-- <button id="view-marked-review-btn" class="action-btn secondary"><i class="fas fa-flag"></i> Marked for Review</button> -->
                 </section>
 
@@ -122,24 +122,6 @@
                     </div>
                 </section>
 
-                <!-- Advanced Analysis Placeholders (Optional - can be expanded later) -->
-                <!--
-                <section class="advanced-analysis-options grid-container">
-                    <div class="card analysis-card">
-                        <h4>Chapter Wise</h4> <button class="view-analysis-btn">View Analysis <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                     <div class="card analysis-card">
-                        <h4>Subject Wise</h4> <button class="view-analysis-btn">View Analysis <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                    <div class="card analysis-card">
-                        <h4>Question Type Wise</h4> <button class="view-analysis-btn">View Analysis <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                     <div class="card analysis-card">
-                        <h4>Marks Wise</h4> <button class="view-analysis-btn">View Analysis <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </section>
-                 -->
-
                 <!-- Sections Overview Table -->
                 <section class="sections-overview card">
                     <h3>Sections Overview</h3>
@@ -161,7 +143,7 @@
                         </table>
                     </div>
                 </section>
-                <!-- **** NEW: Detailed Section Analysis Cards **** -->
+                <!-- Detailed Section Analysis Cards -->
                 <section class="detailed-section-analysis">
                     <h3 class="section-title">Detailed Section Analysis</h3>
                     <div id="detailed-section-cards-container" class="grid-container">
@@ -169,36 +151,59 @@
                         <p>Loading detailed section analysis...</p>
                     </div>
                 </section>
-                <!-- **** END: Detailed Section Analysis Cards **** -->
 
             </div> <!-- End Dashboard View -->
 
-            <!-- Detailed Question Review Area (Initially Hidden, populated by original logic) -->
+            <!-- Detailed Question Review Area (Initially Hidden) -->
+            <!-- This section now handles Section Tabs View, Chapter Summary View, and Chapter Questions View -->
             <section id="detailed-results-area" style="display: none;">
-                <button id="back-to-dashboard-btn" class="action-btn secondary"><i class="fas fa-arrow-left"></i> Back to Dashboard</button>
-                <button id="print-results-button" title="Print Detailed Results"><i class="fas fa-print"></i> Print Questions</button>
+                <div class="action-buttons"> <!-- Action buttons for this entire view -->
+                    <button id="back-to-dashboard-btn" class="action-btn secondary"><i class="fas fa-arrow-left"></i> Back to Dashboard</button>
+                    <!-- Print button prints questions (either section or chapter filtered) -->
+                    <button id="print-results-button" class="btn btn-secondary action-button" title="Print Questions Shown Below"><i class="fas fa-print"></i> Print Questions</button>
+                    <!-- ** NEW: Button to switch to chapter summary view ** -->
+                    <button id="see-chapterwise-btn" class="btn btn-outline-secondary ms-2 action-button" title="View Chapter-wise Summary"><i class="fas fa-book-open"></i> See Chapterwise</button>
+                    <button id="view-by-section-btn" class="btn btn-toggle active" title="View Questions by Section"><i class="fas fa-layer-group"></i> View By Section</button>
+                </div>
 
                 <h2>Detailed Review <span id="attempt-timestamp"></span></h2>
 
-                <!-- Overall Score Summary (Optional - Can be hidden if redundant) -->
-                <!-- <div class="results-summary overall-summary"> ... </div> -->
-
-                <!-- Section-wise Score Summary (Optional - Can be hidden if redundant) -->
-                <!-- <div class="results-summary section-summary"> ... </div> -->
-
-                <!-- Detailed Question Review -->
-                <div class="results-detailed-review">
-                    <h3>Questions & Solutions</h3>
-                    <div class="review-section-tabs" id="review-section-tabs">
-                        <!-- Review section tabs generated by JS -->
-                    </div>
-                    <div class="review-questions-container" id="review-questions-container">
-                        <!-- Questions generated by JS -->
-                    </div>
+                <!-- ** NEW: Container for Chapter Summary Cards (Initially Hidden) ** -->
+                <!-- Add CSS for layout (e.g., grid or flex) -->
+                <div id="chapter-summary-view" class="grid-container chapter-cards-container" style="display: none;">
+                    <!-- Chapter cards generated by JS -->
+                    <p>Loading chapter summary...</p>
                 </div>
+
+                <!-- Existing container for Section Tabs (Hidden when Chapter View active) -->
+                <div class="review-section-tabs" id="review-section-tabs">
+                    <!-- Review section tabs generated by JS -->
+                </div>
+
+                 <!-- ** NEW: Title shown when viewing questions filtered by Chapter ** -->
+                 <h4 id="chapter-questions-title" style="display: none; margin-top: 15px; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #ccc;"></h4>
+
+                <!-- Existing container for displaying question lists (Sections or Chapters) -->
+                <div class="review-questions-container" id="review-questions-container">
+                    <!-- Questions generated by JS -->
+                </div>
+
             </section> <!-- End Detailed Results Area -->
 
-        </main>
+
+            <!-- Chapter-wise Analysis Modal (Used for SECTION-SPECIFIC breakdown from Dashboard card) -->
+             <div id="chapter-analysis-modal" class="modal-overlay" style="display: none;">
+                 <div class="modal-content">
+                     <button class="modal-close-btn" id="close-chapter-modal-btn" title="Close">×</button>
+                     <h3 id="chapter-analysis-title">Chapter-wise Analysis</h3>
+                     <div id="chapter-analysis-table-container">
+                         <!-- Table will be generated here by JS for section-specific modal -->
+                         <p>Loading analysis...</p>
+                     </div>
+                 </div>
+             </div>
+
+        </main> <!-- End results-display-area -->
     </div> <!-- End Main Container -->
 
     <!-- 1. Include Chart.js -->
@@ -215,6 +220,7 @@
     </script>
 
     <!-- 3. Include the Modified Universal Result JS file -->
+    <!-- Make sure the path is correct relative to THIS HTML file -->
     <script src="../../JS/Viewresult.js"></script>
 
 </body>

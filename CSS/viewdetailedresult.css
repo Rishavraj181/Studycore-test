@@ -10,8 +10,66 @@
     margin-bottom: 15px;
 }
 
+.detailed-view-controls {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping */
+    margin-bottom: 15px; /* Space below buttons */
+    gap: 10px; /* Space between elements */
+}
+
+.view-toggle-buttons {
+    display: inline-flex; /* Keep buttons inline */
+    border: 1px solid #adb5bd; /* Light gray border for the group */
+    border-radius: 6px;
+    overflow: hidden; /* Clip corners */
+    margin: 0 10px; /* Add some space around the group */
+}
+
+.btn-toggle {
+    padding: 8px 15px;
+    background-color: #f8f9fa; /* Light background */
+    border: none;
+    border-right: 1px solid #dee2e6; /* Separator line */
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #495057; /* Dark gray text */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.view-toggle-buttons .btn-toggle:last-child {
+    border-right: none; /* No border on the last button */
+}
+
+.btn-toggle:hover {
+    background-color: #e9ecef; /* Slightly darker on hover */
+}
+
+.btn-toggle.active {
+    background-color: #0d6efd; /* Primary blue */
+    color: #fff; /* White text */
+    font-weight: 600;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-toggle.active:hover {
+    background-color: #0b5ed7; /* Darker blue on hover */
+}
+
+.btn-toggle i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Adjust specific button sizes if needed */
+#print-results-button {
+    margin-left: auto; /* Push print button to the right */
+}
+
 /* --- Tabs --- */
 .review-section-tabs {
+    display: flex; /* Ensure flex display for alignment */
+    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
     margin-bottom: 20px;
     border-bottom: 2px solid #d1d5db; /* Gray medium */
     padding-bottom: 5px;
@@ -20,6 +78,7 @@
 .review-section-tab {
     padding: 8px 16px;
     margin-right: 5px;
+    margin-bottom: 5px; /* Add bottom margin for wrapping */
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -27,6 +86,7 @@
     font-size: 1em;
     color: #4b5563; /* Gray dark */
     transition: border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Prevent text wrapping within a tab */
 }
 
 .review-section-tab.active {
@@ -39,7 +99,7 @@
     color: #1f2937; /* Darker text on hover */
 }
 
-/* --- Question Item --- */
+/* --- Question Item (Existing Styles) --- */
 .review-question-item {
     border: 1px solid #e5e7eb; /* Lighter gray */
     border-radius: 8px;
@@ -87,21 +147,25 @@
 }
 
 /* Status Styling */
-.review-status { padding: 2px 6px; border-radius: 4px; color: white; }
+.review-status { padding: 2px 6px; border-radius: 4px; color: white; display: inline-block; } /* Added inline-block */
 .review-status.correct { background-color: #10b981; } /* Green */
 .review-status.incorrect { background-color: #ef4444; } /* Red */
 .review-status.unattempted { background-color: #f59e0b; } /* Amber */
 
 /* Answer Styling */
-.user-answer { font-style: italic; }
+.user-answer { font-style: italic; background-color: #f3f4f6; padding: 1px 4px; border-radius: 3px;} /* Added slight background */
 .user-answer.incorrect-ans {
-    color: #ef4444; /* Red */
+    color: #dc2626; /* Darker Red */
     font-weight: bold;
     text-decoration: line-through;
+    background-color: #fee2e2; /* Light Red background */
 }
 .correct-answer {
-    color: #10b981; /* Green */
+    color: #059669; /* Darker Green */
     font-weight: bold;
+    background-color: #d1fae5; /* Light Green background */
+    padding: 1px 4px;
+    border-radius: 3px;
 }
 
 .review-solution {
@@ -128,4 +192,106 @@
     color: #6b7280; /* Gray */
     padding: 20px;
     text-align: center;
+}
+
+/* =========================================== */
+/* == NEW: Chapterwise View Styles == */
+/* =========================================== */
+
+/* --- Chapter Summary View Container --- */
+#chapter-summary-view {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between cards */
+    padding: 20px 0; /* Add some padding */
+}
+
+/* --- Individual Chapter Card --- */
+.chapter-card {
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.chapter-card h5 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #1e3a8a; /* Dark Blue */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+/* --- Stats Details Section within Card --- */
+.chapter-stats-details {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    flex-grow: 1; /* Allow details to take available space */
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between; /* Space label and value */
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px dotted #f3f4f6; /* Very subtle line */
+}
+.stat-line:last-child {
+    border-bottom: none;
+}
+
+.stat-summary {
+    display: block; /* Take full width */
+    text-align: center; /* Center the Correct/Wrong/None */
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.stat-summary .stat-correct { color: #10b981; font-weight: 500; }
+.stat-summary .stat-wrong { color: #ef4444; font-weight: 500; }
+.stat-summary .stat-none { color: #6b7280; font-weight: 500; }
+
+.stat-label {
+    color: #4b5563; /* Gray dark */
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #1f2937; /* Darker text */
+}
+
+/* --- View Questions Button within Chapter Card --- */
+.btn-view-chapter-questions {
+    /* Style similar to other buttons or as desired */
+    display: block; /* Make it block level */
+    width: 100%; /* Full width */
+    padding: 8px 15px;
+    margin-top: auto; /* Push to bottom if card height varies */
+    font-size: 0.9em;
+    text-align: center;
+    border: 1px solid #3b82f6; /* Primary color border */
+    background-color: #eff6ff; /* Light primary background */
+    color: #3b82f6; /* Primary color text */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-view-chapter-questions:hover {
+    background-color: #dbeafe; /* Slightly darker background */
+    color: #2563eb; /* Darker text */
+}
+
+/* --- Title shown when viewing questions filtered by chapter --- */
+#chapter-questions-title {
+    font-size: 1.3em;
+    color: #1e3a8a; /* Dark Blue */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
